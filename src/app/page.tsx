@@ -118,7 +118,7 @@ export default function Home() {
             src={heroImg}
             alt="Hero"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             quality={100}
             className="brightness-75 rounded-lg"
           />
