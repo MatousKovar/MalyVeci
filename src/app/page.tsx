@@ -1,103 +1,248 @@
+'use client'
+import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import heroImg from "../../public/logomv.png"; 
+import matous from "../../public/ja.jpeg";
+import mates from "../../public/basak.jpeg";
+import jiri from "../../public/jiri.jpeg";
+import roubalka from "../../public/roubalka.jpeg";
+import prokop from "../../public/prokop.jpeg";
+
+
+
+import { useEffect, useState } from "react";
+
+
+const images = [
+  matous,
+  mates,
+  "/foto1.jpeg",
+  "/foto2.jpeg",
+  "/3.jpeg",
+  "/4.jpeg",
+  "/5.jpeg",
+  "/6.jpg",
+  "/7.jpeg",
+  "/8.jpeg",
+  "/9.jpeg",
+  "/10.png",
+  "/11.jpg",
+  "/12.jpg",
+  "/13.jpeg",
+  "/14.jpg",
+];
+
+
+const members = [
+  {
+    name: "Matouš Kovář",
+    role: "Kytara",
+    bio: "Kulervoucí frajer.",
+    image: matous,
+  },
+  {
+    name: "Jiří Bártík",
+    role: "Nula",
+    bio: "Bere fanynky na mražák (Týna o tom neví).",
+    image: jiri,
+  },
+
+  {
+    name: "Denča Roubalka",
+    role: "Zpěv",
+    bio: "Denisa Roubalová, zprávičky.",
+    image: roubalka,
+  },
+
+  {
+    name: "Matijas Fojtů",
+    role: "Nejlepší kamarád",
+    bio: "Kouří cigára a nemá rytmus, jinak docela ujde.",
+    image: mates,
+  },
+  {
+    name: "Prokop Roubal",
+    role: "Buben",
+    bio: "Já jsem hrál, ty jsi hrál, my jsme hráli na cimbál.",
+    image: prokop,
+  },
+];
+
+
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  //scrollovani
+  const [offsetY, setOffsetY] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const handleScroll = () => setOffsetY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  //gallery
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.2 });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  const itemVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
+  };
+  return (
+    <div className="bg-black text-white">
+       {/* Top Navigation (sticky) */}
+       <header className="bg-black text-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-end space-x-6 h-16 items-center">
+            <a href="#onas" className="hover:text-yellow-400">O nas</a>
+            <a href="#akce" className="hover:text-yellow-400">Akce</a>
+            <a href="#fotogalerie" className="hover:text-yellow-400">Fotogalerie</a>
+          </div>
+        </div>
+      </header>
+      {/* Hero Section */}
+      <section className="relative w-full h-screen flex justify-center items-center bg-black -mt-16">
+        <div className="relative w-150 h-150">
+          <Image
+            src={heroImg}
+            alt="Hero"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="brightness-75 rounded-lg"
+          />
+        </div>
+      
+        {/* Optional overlay text */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+          {/* <h1 className="text-5xl md:text-7xl font-bold mb-4">My Band</h1> */}
+          {/* <p className="text-xl md:text-2xl">Feel the music</p> */}
+        </div>
+      </section>
+      {/* Top Navigation (sticky)
+      <header className="bg-black text-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-end space-x-6 h-16 items-center">
+            <a href="#onas" className="hover:text-yellow-400">O nas</a>
+            <a href="#akce" className="hover:text-yellow-400">Akce</a>
+            <a href="#fotogalerie" className="hover:text-yellow-400">Fotogalerie</a>
+          </div>
+        </div>
+      </header> */}
+
+      {/* Page Sections */}
+      <main 
+        style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+      >
+        <section id="onas" className="py-20 bg-black text-white">
+          <h2
+            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
+            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
+            <span className="text-black">O </span>
+            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>KAPELE</span>
+          </h2>
+
+            <p className="text-center mx-auto mt-6 mb-60 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-100 
+                 px-4 py-4 rounded-lg shadow-lg">Co je Harley Davidson mezi motorkami, jsou Malý Věci mezi kapelami</p>
+          <div className="max-w-5xl mx-auto space-y-16 px-4">
+            {members.map((member, i) => (
+              <motion.div
+              key={i}
+              initial={{ x: i % 2 === 0 ? "-100%" : "100%", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              exit={{ x: i % 2 === 0 ? "-100%" : "100%", opacity: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+              className={`flex flex-col md:flex-row items-center md:items-start md:space-x-8 ${
+                i % 2 === 0 ? "" : "md:flex-row-reverse md:space-x-reverse"
+              }`}
+              >
+                <div className="relative w-68 h-68 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="mt-4 md:mt-0 text-left md:max-w-xl">
+                  <h3 className="text-xl font-semibold text-red-600">{member.name}</h3>
+                  <p className="text-gray-300 italic">{member.role}</p>
+                  <p className="text-gray-400 mt-2">{member.bio}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section id="akce" className="py-20 text-center bg-black">
+        <h2
+            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
+            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
+            <span className="text-black">A</span>
+            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>KCE</span>
+          </h2>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-1 gap-8 px-4">
+            {/* Event Card */}
+            <div className="bg-gray-950 p-6 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">Svatba Bártíků (vstupné 200)</h3>
+              <p className="text-gray-300 mb-2">Datum: 30.8.2025</p>
+              <p className="text-gray-400">Místo: Kvilda</p>
+            </div>
+
+            <div className="bg-gray-950 p-6 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">ASTEN JOHNSON Strakonice</h3>
+              <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
+              <p className="text-gray-400">Místo: Sádky Strakonice</p>
+            </div>
+
+            <div className="bg-gray-950 p-6 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">Svatba dvě</h3>
+              <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
+              <p className="text-gray-400">Místo: Sádky Sušice</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="fotogalerie" className="py-20 bg-band-black text-white">
+        <h2
+            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
+            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
+            <span className="text-black">FO</span>
+            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>TOGRAFIE</span>
+          </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+        {images.map((src, i) => (
+          <motion.div
+            key={i}
+            animate={controls}
+            whileHover={{ scale: 1.05 }}
+            className="rounded-lg overflow-hidden shadow-lg cursor-pointer"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={src}
+              alt={`Gallery ${i}`}
+              width={500}
+              height={300}
+              objectFit="cover"
+              className="w-full h-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
