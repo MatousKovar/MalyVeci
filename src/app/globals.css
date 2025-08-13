@@ -29,3 +29,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@font-face {
+  font-family: "Orbitron Regular";
+  src: url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.eot");
+  src: url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.svg#Orbitron Regular")format("svg");
+}
