@@ -100,20 +100,21 @@ export default function Home() {
     visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
   };
   return (
-    <div className="bg-black text-white">
+    
+    <div className="bg-black text-white overflow-x-hidden">
        {/* Top Navigation (sticky) */}
        <header className="bg-black text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end space-x-6 h-16 items-center">
-            <a href="#onas" className="hover:text-yellow-400">O nas</a>
-            <a href="#akce" className="hover:text-yellow-400">Akce</a>
-            <a href="#fotogalerie" className="hover:text-yellow-400">Fotogalerie</a>
+            <a href="#onas" className="hover:text-band-red">O nas</a>
+            <a href="#akce" className="hover:text-band-red">Akce</a>
+            <a href="#fotogalerie" className="hover:text-band-red">Fotogalerie</a>
           </div>
         </div>
       </header>
       {/* Hero Section */}
       <section className="relative w-full h-screen flex justify-center items-center bg-black -mt-16">
-        <div className="relative w-150 h-150">
+        <div className="relative w-64 h-64 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px]">
           <Image
             src={heroImg}
             alt="Hero"
@@ -124,11 +125,10 @@ export default function Home() {
           />
         </div>
       
-        {/* Optional overlay text */}
+        {/* Muzes pridat nejakej text */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-          {/* <h1 className="text-5xl md:text-7xl font-bold mb-4">My Band</h1> */}
-          {/* <p className="text-xl md:text-2xl">Feel the music</p> */}
         </div>
+
       </section>
       {/* Top Navigation (sticky)
       <header className="bg-black text-white sticky top-0 z-50">
@@ -147,12 +147,15 @@ export default function Home() {
       >
         <section id="onas" className="py-20 bg-black text-white">
           <h2
-            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
-            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
-            <span className="text-black">O </span>
-            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>KAPELE</span>
+            className=" text-7xl font-bold font-orbitron text-center mb-12">
+            <span className="text-black" style={{ WebkitTextStroke: "3px white" }}>O </span>
+            <span 
+              className="text-band-red"
+              style={{ WebkitTextStroke: "3px white" }}
+            >
+              KAPELE
+            </span>
           </h2>
-
             <p className="text-center mx-auto mt-6 mb-60 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-100 
                  px-4 py-4 rounded-lg shadow-lg">Co je Harley Davidson mezi motorkami, jsou Malý Věci mezi kapelami</p>
           <div className="max-w-5xl mx-auto space-y-16 px-4">
@@ -168,7 +171,7 @@ export default function Home() {
                 i % 2 === 0 ? "" : "md:flex-row-reverse md:space-x-reverse"
               }`}
               >
-                <div className="relative w-68 h-68 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -177,7 +180,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-4 md:mt-0 text-left md:max-w-xl">
-                  <h3 className="text-xl font-semibold text-red-600">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-band-red">{member.name}</h3>
                   <p className="text-gray-300 italic">{member.role}</p>
                   <p className="text-gray-400 mt-2">{member.bio}</p>
                 </div>
@@ -191,7 +194,7 @@ export default function Home() {
             className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
             style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
             <span className="text-black">A</span>
-            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>KCE</span>
+            <span className="text-band-red">KCE</span>
           </h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-1 gap-8 px-4">
             {/* Event Card */}

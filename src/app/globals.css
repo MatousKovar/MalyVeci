@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 
+
 .font-orbitron {
   font-family: 'Orbitron', sans-serif;
 }
@@ -11,6 +12,7 @@
 }
 
 @theme inline {
+  --color-band-red: #ce2f21;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
