@@ -104,24 +104,24 @@ export default function Home() {
     <div className="bg-black text-white overflow-x-hidden">
        {/* Top Navigation (sticky) */}
        <header className="bg-black text-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end space-x-6 h-16 items-center">
-            <a href="#onas" className="hover:text-band-red">O nas</a>
-            <a href="#akce" className="hover:text-band-red">Akce</a>
-            <a href="#fotogalerie" className="hover:text-band-red">Fotogalerie</a>
+            <a href="#onas" className=" hover:text-band-red">O nas</a>
+            <a href="#akce" className=" hover:text-band-red">Akce</a>
+            <a href="#fotogalerie" className="brghtness-75 hover:text-band-red">Fotogalerie</a>
           </div>
         </div>
       </header>
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex justify-center items-center bg-black -mt-16">
-        <div className="relative w-64 h-64 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px]">
+      <section className="relative w-full h-screen flex justify-center items-center bg-black -mt-16 ">
+        <div className="relative w-64 h-64 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px] brightness-75">
           <Image
             src={heroImg}
             alt="Hero"
             layout="fill"
             objectFit="contain"
             quality={100}
-            className="brightness-75 rounded-lg"
+            className="rounded-lg"
           />
         </div>
       
@@ -130,16 +130,6 @@ export default function Home() {
         </div>
 
       </section>
-      {/* Top Navigation (sticky)
-      <header className="bg-black text-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end space-x-6 h-16 items-center">
-            <a href="#onas" className="hover:text-yellow-400">O nas</a>
-            <a href="#akce" className="hover:text-yellow-400">Akce</a>
-            <a href="#fotogalerie" className="hover:text-yellow-400">Fotogalerie</a>
-          </div>
-        </div>
-      </header> */}
 
       {/* Page Sections */}
       <main 
@@ -147,11 +137,13 @@ export default function Home() {
       >
         <section id="onas" className="py-20 bg-black text-white">
           <h2
-            className=" text-7xl font-bold font-orbitron text-center mb-12">
-            <span className="text-black" style={{ WebkitTextStroke: "3px white" }}>O </span>
+            className=" text-stroke-2 text-5xl font-bold font-orbitron text-center mb-12 
+            sm:text-6xl 
+            md:text-7xl md:text-stroke-3
+            lg:text-stroke-4 lg:text-8xl ">
+            <span className="text-black brightness-85">O </span>
             <span 
-              className="text-band-red"
-              style={{ WebkitTextStroke: "3px white" }}
+              className="text-band-red brightness-85"
             >
               KAPELE
             </span>
@@ -162,12 +154,12 @@ export default function Home() {
             {members.map((member, i) => (
               <motion.div
               key={i}
-              initial={{ x: i % 2 === 0 ? "-100%" : "100%", opacity: 0 }}
+              initial={{ x: i % 2 === 0 ? "150" : "150", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              exit={{ x: i % 2 === 0 ? "-100%" : "100%", opacity: 0 }}
+              exit={{ x: i % 2 === 0 ? "-150" : "150", opacity: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className={`flex flex-col md:flex-row items-center md:items-start md:space-x-8 ${
+              className={`flex flex-col overflow-hidden md:flex-row items-center md:items-start md:space-x-8 ${
                 i % 2 === 0 ? "" : "md:flex-row-reverse md:space-x-reverse"
               }`}
               >
@@ -180,7 +172,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-4 md:mt-0 text-left md:max-w-xl">
-                  <h3 className="text-xl font-semibold text-band-red">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-band-red ">{member.name}</h3>
                   <p className="text-gray-300 italic">{member.role}</p>
                   <p className="text-gray-400 mt-2">{member.bio}</p>
                 </div>
@@ -191,8 +183,7 @@ export default function Home() {
 
         <section id="akce" className="py-20 text-center bg-black">
         <h2
-            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
-            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
+            className="brightness-85 text-5xl text-stroke-2 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3">
             <span className="text-black">A</span>
             <span className="text-band-red">KCE</span>
           </h2>
@@ -211,7 +202,7 @@ export default function Home() {
             </div>
 
             <div className="bg-gray-950 p-6 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-red-600">Svatba dvě</h3>
+              <h3 className="text-xl font-semibold mb-2 text-band-red">Svatba dvě</h3>
               <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
               <p className="text-gray-400">Místo: Sádky Sušice</p>
             </div>
@@ -220,12 +211,11 @@ export default function Home() {
 
         <section id="fotogalerie" className="py-20 bg-band-black text-white">
         <h2
-            className="brightness-75 text-7xl font-bold font-orbitron text-center mb-12"
-            style={{ WebkitTextStroke: "3px white", WebkitTextFillColor: "black" }}>
+            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3">
             <span className="text-black">FO</span>
-            <span className="text-band-red" style={{ WebkitTextFillColor: "red" }}>TOGRAFIE</span>
+            <span className="text-band-red">TOGRAFIE</span>
           </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 overflow-hidden max-w-7xl mx-auto">
         {images.map((src, i) => (
           <motion.div
             key={i}
@@ -236,8 +226,8 @@ export default function Home() {
             <Image
               src={src}
               alt={`Gallery ${i}`}
-              width={500}
-              height={300}
+              width={300}
+              height={100}
               objectFit="cover"
               className="w-full h-full"
             />
