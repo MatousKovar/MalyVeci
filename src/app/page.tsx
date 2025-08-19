@@ -101,20 +101,20 @@ export default function Home() {
   };
   return (
     
-    <div className="bg-black text-white overflow-x-hidden">
+    <div className="bg-spotlight text-white overflow-x-hidden">
        {/* Top Navigation (sticky) */}
        <header className="bg-black text-white sticky top-0 z-50">
         <div className="  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end space-x-6 h-16 items-center">
-            <a href="#onas" className=" hover:text-band-red">O nas</a>
-            <a href="#akce" className=" hover:text-band-red">Akce</a>
-            <a href="#fotogalerie" className="brghtness-75 hover:text-band-red">Fotogalerie</a>
+            <a href="#onas" className=" hover:text-[#D90000]">O nas</a>
+            <a href="#akce" className=" hover:text-[#D90000]">Akce</a>
+            <a href="#fotogalerie" className="brghtness-75 hover:text-[#D90000]">Fotogalerie</a>
           </div>
         </div>
       </header>
       {/* Hero Section */}
       <section className="relative w-full h-screen flex justify-center items-center bg-black -mt-16 ">
-        <div className="relative w-64 h-64 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px] brightness-75">
+        <div className="relative w-64 h-64 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px] lg:w-120 lg:h-120 lg:h-[900px] lg:w[900px] brightness-75">
           <Image
             src={heroImg}
             alt="Hero"
@@ -143,7 +143,7 @@ export default function Home() {
             lg:text-stroke-4 lg:text-8xl ">
             <span className="text-black brightness-85">O </span>
             <span 
-              className="text-band-red brightness-85"
+              className="text-[#D90000] brightness-85"
             >
               KAPELE
             </span>
@@ -154,16 +154,16 @@ export default function Home() {
             {members.map((member, i) => (
               <motion.div
               key={i}
-              initial={{ x: i % 2 === 0 ? "150" : "150", opacity: 0 }}
+              initial={{ x: i % 2 === 0 ? "150" : "-150", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               exit={{ x: i % 2 === 0 ? "-150" : "150", opacity: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className={`flex flex-col overflow-hidden md:flex-row items-center md:items-start md:space-x-8 ${
-                i % 2 === 0 ? "" : "md:flex-row-reverse md:space-x-reverse"
+              className={`flex flex-col overflow-hidden lg:flex-row items-center lg:items-start md:space-x-8 ${
+                i % 2 === 0 ? "" : "lg:flex-row-reverse lg:space-x-reverse"
               }`}
               >
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-38 h-48 sm:w-48 sm:h-48 md:w-64 md:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -172,7 +172,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-4 md:mt-0 text-left md:max-w-xl">
-                  <h3 className="text-xl font-semibold text-band-red ">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-[#D90000] ">{member.name}</h3>
                   <p className="text-gray-300 italic">{member.role}</p>
                   <p className="text-gray-400 mt-2">{member.bio}</p>
                 </div>
@@ -185,7 +185,7 @@ export default function Home() {
         <h2
             className="brightness-85 text-5xl text-stroke-2 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3">
             <span className="text-black">A</span>
-            <span className="text-band-red">KCE</span>
+            <span className="text-[#D90000]">KCE</span>
           </h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-1 gap-8 px-4">
             {/* Event Card */}
@@ -202,18 +202,18 @@ export default function Home() {
             </div>
 
             <div className="bg-gray-950 p-6 rounded-xl shadow-lg hover:scale-105 transform transition duration-300">
-              <h3 className="text-xl font-semibold mb-2 text-band-red">Svatba dvě</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#D90000]">Svatba dvě</h3>
               <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
               <p className="text-gray-400">Místo: Sádky Sušice</p>
             </div>
           </div>
         </section>
 
-        <section id="fotogalerie" className="py-20 bg-band-black text-white">
+        <section id="fotogalerie" className="py-20 bg-spotlight text-white">
         <h2
             className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3">
             <span className="text-black">FO</span>
-            <span className="text-band-red">TOGRAFIE</span>
+            <span className="text-[#D90000]">TOGRAFIE</span>
           </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 overflow-hidden max-w-7xl mx-auto">
         {images.map((src, i) => (

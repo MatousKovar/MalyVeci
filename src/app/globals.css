@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @import "tailwindcss";
 
 
 
-.font-orbitron {
-  font-family: 'Orbitron', sans-serif;
-}
 :root {
   --foreground: #ffffff;
   --background: black;
 }
+
 
 @theme inline {
   --color-band-red: #F02700;
@@ -26,13 +23,20 @@
   }
 }
 
-
 /* Obtazeni okraju */
 @layer utilities {
+    .font-orbitron {
+      font-family: "Orbitron", sans-serif;
+    }
+
     .text-stroke-2 {
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: white;
     }
+    .bg-spotlight {
+      background: radial-gradient(circle at center, #111 0%, #000 80%);
+    }
+    
     .text-stroke-3 {
       -webkit-text-stroke-width: 3px;
       -webkit-text-stroke-color: white;
@@ -45,16 +49,15 @@
 
 
 body {
-  background: var(--background);
+  background: radial-gradient(circle at center, #111 0%, #000 80%);
+  /* background: var(--background); */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-@font-face {
-  font-family: "Orbitron Regular";
-  src: url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.eot");
-  src: url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/495dbc8489b3059e462a904ed09931c9.svg#Orbitron Regular")format("svg");
-}
+
+
+@font-face {  font-family: "Orbitron";  
+  font-style: normal;  
+  font-weight: 600; 
+  font-display: swap;
+  src: url("/fonts/Orbitron-SemiBold.ttf") format("truetype");}

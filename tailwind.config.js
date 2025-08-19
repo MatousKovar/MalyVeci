@@ -10,7 +10,7 @@ module.exports = {
       extend: {
         colors: {
           'band-black': '#171717',
-          'band-red': '#e00a0a',
+          'band-red': '#D90000',
           'band-yellow': '#FFD700'
         },
         fontFamily: {
