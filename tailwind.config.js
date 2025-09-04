@@ -19,5 +19,20 @@ module.exports = {
       },
     },
     plugins: [],
+    safelist: [
+      "text-stroke-2",
+      "text-stroke-3",
+      "text-stroke-4",
+      "sm:text-stroke-2",
+      "sm:text-stroke-3",
+      "sm:text-stroke-4",
+      "md:text-stroke-2",
+      "md:text-stroke-3",
+      "md:text-stroke-4",
+      "lg:text-stroke-2",
+      "lg:text-stroke-3",
+      "lg:text-stroke-4",
+      "lg:text-stroke-8",
+    ],
   }
   
