@@ -58,8 +58,8 @@ export default function Navbar() {
         </div>
   
         {mobileOpen && (
-        <div className="sm:hidden fixed inset-0 top-16 z-50 bg-black/90 backdrop-blur-md top-16 left-0 w-full ">
-            <div className="px-4 pt-6 space-y-4">
+        <div className="sm:hidden fixed inset-0 top-16 z-50 bg-black/70 backdrop-blur-md top-16 left-0 w-full ">
+            <div className="px-4 pt-6 space-y-4 bg-black/70">
             {links.map((link) => (
                 <a
                 key={link}

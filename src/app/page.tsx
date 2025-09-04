@@ -33,31 +33,31 @@ const members = [
   {
     name: "Matouš Kovář",
     role: "Kytara",
-    bio: "Kulervoucí frajer.",
+    bio: "Je to náš lídr, trenér, basák, kytarista, bubeník a zpěvák v jednom. A taky šéfdirigent všech nervů, protože všechno a všechny hlídá.Zavedl pravidlo: Před zkouškou a před koncertem – zákaz pití! (Pokud se někdo ptá proč, odpověď je většinou: „Protože jsem to řek.“) Hraje profesorsky! Jakmile hodí blbej pohled, všichni víme, že je zle. A díky YouTube už má skoro doktorát ze zvučení. Zpívat zásadně nechtěl, ale nebylo zbytí. A když mu dáte hodně lajků, možná dostane i vlastní sólovku. Možná. Jak Matouše nejvíc nasrat? Přijít na zkoušku o minutu pozdě. A slovy Jirky: „Nevim, co je horší – jestli nasranej Matouš, nebo když mlčí.“",
     image: matous,
   },
   {
     name: "Jiří Bártík",
     role: "Nula",
-    bio: "Bere fanynky na mražák (Týna o tom neví).",
+    bio: "Jirkovo kolínko je už ikonický. Zaměřte se na to – koleno vždycky hraje s náma. Je specialista na Hudbu Praha a taky náš strašickej Nohavica. Nebojácně zkouší, experimentuje a pouští se do tzv. Jirkovo inovací. Někdy to klapne, někdy to bouchne. Ale vždycky to stojí za to. Má nejvíc fanoušků na světě a shání nejvíc kšeftů. A taky to je autor všech plakátů, protože nikdo jinej by na to neměl nervy, Jirka by mohl mít vysokoškolský titul za práci s Canvou. A když zazpívá Zdá se mi, lidi to milujou. My taky.",
     image: jiri,
   },
   {
     name: "Denča Roubalka",
     role: "Zpěv",
-    bio: "Denisa Roubalová, zprávičky.",
+    bio: "Je to hlavní ozdoba a hlas našeho ansámblu, která je zodpovědná za většinu hlasovejch harmonií. Nenechte se zmást její výškou, protože v jejích 155 cm je vměstnána poctivá dávka rockový energie. Když zazní Rebel Yell nebo Ewa Farna, je jak utržená ze řetězu, to mi věřte. Je to taky hlavní módní policie Malejch věcí, takže ponožky v sandálech Vám na pódiu rozhodně neprojdou, zároveň je to hlavní správkyně sociálních sítí s doktorátem z tvorby hudebních kvízů a poutačů na koncerty. Na pódiu je k nezastavení a svými divokými pohyby láká nebohé smrtelníky do svých rockových spárů – pokud jí někdy dojde energie na zpěv, můžete si bejt jistý, že si jen schovává zbytek na skákání a tančení, čímž vydá na pohyb celý kapely. Pokud na Vás působí jako něžná duše – To jste ještě neslyšeli její pekelný „Banditi di Práááág“.",
     image: roubalka,
   },
   {
     name: "Matijas Fojtů",
     role: "Nejlepší kamarád",
-    bio: "Kouří cigára a nemá rytmus, jinak docela ujde.",
+    bio: "Je to nejen basák, ale taky hlavní choreograf Malých Věcí. Když se spojí s Jirkou, vznikne tanec, co nemá obdoby (obvykle nemá ani smysl, ale o to víc to baví). Nejvíc ho baví hrát Jahody Mražený. Fakt. Zkuste se ho zeptat a budete to mít i s ukázkou. A když jde na kolena, víme, že jde do tuhýho. Jakmile přijde s ortézou, je jasný, že se blíží taneční peklo. Je to náš moderátor, bavič a ministr dobrý nálady. Autor většiny hlášek, co už si ani nepamatujem, ale furt je opakujem. A hlavně – je to srdcař. Takovej, co by s basou i tančil, kdyby to šlo. (A někdy to fakt zkouší.)",
     image: mates,
   },
   {
     name: "Prokop Roubal",
     role: "Buben",
-    bio: "Já jsem hrál, ty jsi hrál, my jsme hráli na cimbál.",
+    bio: "Je to chodící metronom. Ale jakmile začne hrát Máma táta, přepne na rychlost 2×. A ví proč. Miluje to tak moc, že prostě nemůže jinak. Specializuje se na házení paliček po lidech – nejčastěji se vzkazem: „Chyť si tempo sám!” Miluje Pražskej výběr a Lucii, takže když nevíme co hrát, pustíme mu to do uší a čekáme, co z něj vyleze. Občas prokopne nějakej ten buben a zároveň je to osvědčený setlist maker, který má právo veta. Společně se zpěvačkou tvoří nejlepší vokalistické duo Malých Věcí (poznámka: počkejte si na Žužu😉).",
     image: prokop,
   },
 ];
@@ -79,7 +79,7 @@ export default function Home() {
     <section className="relative w-full h-screen flex justify-center items-center bg-black ">
       {/* Image container → 70% */}
       <div className="flex  items-center -translate-y-25 sm:-translate-y-0">
-        <div className=" ml-5 sm:mb-20 md:mb-0 relative w-90 h-100 sm:w-120 sm:h-120  md:w-200 md:h-200 lg:w-340 lg:h-340 brightness-75">
+        <div className="  sm:mb-20 md:mb-0 relative w-90 h-90 sm:w-120 sm:h-120  md:w-150 md:h-150 lg:w-190 lg:h-190 brightness-75">
           <Image
             src={heroImg}
             alt="Hero"
@@ -95,15 +95,33 @@ export default function Home() {
       <main>
         <section id="onas" className="py-20 bg-black text-white mt-50">
           <h2
-            className="text-stroke-2 text-5xl font-bold font-orbitron text-center mb-12 
+            className="text-stroke-3 text-5xl font-bold font-orbitron text-center mb-12 
             sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-stroke-8 lg:text-8xl"
           >
             <span className="text-black brightness-85">O </span>
             <span className="text-[#D90000] brightness-85">KAPELE</span>
           </h2>
-          <p className="text-center mx-auto mt-6 mb-60 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg">
-            Co je Harley Davidson mezi motorkami, jsou Malý Věci mezi kapelami
-          </p>
+          <div className=" text-md mx-5 md:mx-30 grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+            <p className=" text-center mx-auto max-w-3xl  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg">
+                  Jsme Malý Věci, a hrajem rocknroll!
+                  
+                  Ahoj, jsme mladá pětičlenná kapela ze Strakonicka, pětice vysokoškoláků z různých oborů, které spojuje vášeň k hudbě a chuť hrát a bavit lidi! Každý koncert je pro nás příležitost předat energii a udělat show, při které se prostě nedá zůstat sedět.
+                  
+                  Na pódiu nás najdete v této sestavě:
+                  ​•​Bc. Matyáš Fojtů – basa
+                  ​•​Bc. Denisa Roubalová – zpěv
+                  ​•​Bc. Jiří Bártík – kytara
+                  ​•​Bc. Matouš Kovář – kytara
+                  ​•​Petr Roubal – bicí
+                  
+            </p>
+            <p className="text-center mx-auto max-w-3xl leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg">
+                  Pět lidí, hromada energie a pořádnej balík songů – to jsme my! Postaráme se o to, aby vaše svatba, ples nebo jakákoli akce jela na plný pecky. V našem playlistu je všechno- od popových hitů (Měls mě vůbec rád, Katy Perry), přes českou klasiku (Kabáti) až po světové rockové legendy (Judas Priest, AC/DC).
+                  
+                  Máme zkušenosti s různými druhy akcí, od koncertů na náměstích, soukromých akcí, až po svatbu- v každém případě se snažíme vždycky vytvořit atmosféru, kde se lidé baví, zpívají a tančí. Protože o to nám jde především!
+            </p>
+
+          </div>
           <div className="max-w-5xl mx-auto space-y-16 px-4">
             {members.map((member, i) => (
               <div
@@ -134,34 +152,44 @@ export default function Home() {
 
         <section id="Akce" className="py-20 text-center bg-black">
           <h2
-            className="brightness-85 text-5xl text-stroke-2 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="brightness-85 text-5xl text-stroke-3 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
             <span className="text-black">A</span>
             <span className="text-[#D90000]">KCE</span>
           </h2>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-1 gap-8 px-4">
-            <div className="bg-gray-950 p-6 rounded-xl shadow-lg">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-4">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Svatba Bártíků (vstupné 200)
-              </h3>
-              <p className="text-gray-300 mb-2">Datum: 30.8.2025</p>
-              <p className="text-gray-400">Místo: Kvilda</p>
-            </div>
-
-            <div className="bg-gray-950 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-2 text-red-600">
-                ASTEN JOHNSON Strakonice
+                Firemní večírek
               </h3>
               <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
-              <p className="text-gray-400">Místo: Sádky Strakonice</p>
             </div>
 
-            <div className="bg-gray-950 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
-                Svatba dvě
+                Svatba
               </h3>
               <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
-              <p className="text-gray-400">Místo: Sádky Sušice</p>
+              {/* <p className="text-gray-400">Místo: Sádky Sušice</p> */}
+            </div>
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">
+                Rockový večer u Hlaváčů
+              </h3>
+              <p className="text-gray-300 mb-2">Datum: 3.10.2025</p>
+              <p className="text-gray-400">Restaurace U Hlaváčků Horažďovice</p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">
+                Soukromá akce
+              </h3>
+              <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">
+                Firemní večírek
+              </h3>
+              <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
             </div>
           </div>
         </section>
@@ -169,7 +197,7 @@ export default function Home() {
         {/* galerie */}
         <section id="Fotogalerie" className="py-20 bg-spotlight text-white">
           <h2
-            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
             <span className="text-black">FO</span>
             <span className="text-[#D90000]">TOGRAFIE</span>
@@ -192,27 +220,28 @@ export default function Home() {
             ))}
           </div>
         </section>
+        {/* Videa sectoin*/}
         <section id="Videa" className="py-20 bg-black text-white flex flex-col items-center">
           <h2
-            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
           >
             <span className="text-black">V</span>
             <span className="text-[#D90000]">IDEA</span>
           </h2>
 
           <iframe
-            className="w-full max-w-3xl h-80 sm:h-96 md:h-[500px] rounded-lg shadow-lg"
+            className="w-0.8 md:w-full max-w-3xl h-80 sm:h-96 md:h-[500px] rounded-lg shadow-lg"
             src="https://www.youtube.com/embed/Hst2OSsuG2I"
             frameBorder="0"
             allowFullScreen
-            title="YouTube Video"
+            title="Nardrazi florenc maly veci"
           ></iframe>
         </section>
 
         {/* Kontakty Section */}
         <section id="Kontakty" className="py-20 bg-black text-white">
           <h2
-            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
             <span className="text-black">K</span>
             <span className="text-[#D90000]">ONTAKTY</span>
@@ -255,42 +284,20 @@ export default function Home() {
         </section>
 
 
-        <div className="w-full overflow-x-auto">
-  <div className="flex space-x-4 w-max">
-    {/* Song 1 */}
-    <iframe
-      src="https://open.spotify.com/embed/track/7ouMYWpwJ422jRcDASZB7P"
-      width="300"
-      height="80"
-      frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      className="rounded-lg shadow-lg"
-    ></iframe>
-
-    {/* Song 2 */}
-    <iframe
-      src="https://open.spotify.com/embed/track/5CtI0qwDJkDQGwXD1H1cLb"
-      width="300"
-      height="80"
-      frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      className="rounded-lg shadow-lg"
-    ></iframe>
-
-    {/* Song 3 */}
-    <iframe
-      src="https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg"
-      width="300"
-      height="80"
-      frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      className="rounded-lg shadow-lg"
-    ></iframe>
-  </div>
-</div>
+        <div className="w-full overflow-x-auto mx-auto">
+          <div className="flex space-x-4 w-max mx-auto mb-5">
+            {/* Song 1 */}
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6K4r3XENOKeXFTKlBlAJLC?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            
+          </div>
+        </div>
       </main>
     </div>
   );

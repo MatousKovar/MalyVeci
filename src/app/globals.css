@@ -58,7 +58,7 @@ body {
   font-style: normal;  
   font-weight: 600; 
   font-display: swap;
-  src: url("/fonts/Orbitron-SemiBold.ttf") format("truetype");}
+  src: url("/fonts/Orbitron-Black.ttf") format("truetype");}
 
 @font-face {font-family: "ArchivoBlack";
   src: url("/fonts/ArchivoBlack.tff") format("truetype");}
