@@ -78,8 +78,8 @@ export default function Home() {
     {/* Hero section */}
     <section className="relative w-full h-screen flex justify-center items-center bg-black ">
       {/* Image container → 70% */}
-      <div className="flex  items-center">
-        <div className=" ml-5 relative w-120 h-120 sm:w-120 sm:h-120  md:w-200 md:h-200 lg:w-340 lg:h-340 brightness-75">
+      <div className="flex  items-center -translate-y-25 sm:-translate-y-0">
+        <div className=" ml-5 sm:mb-20 md:mb-0 relative w-90 h-100 sm:w-120 sm:h-120  md:w-200 md:h-200 lg:w-340 lg:h-340 brightness-75">
           <Image
             src={heroImg}
             alt="Hero"
