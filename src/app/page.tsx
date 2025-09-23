@@ -314,13 +314,13 @@ export default function Home() {
           <div className="relative max-w-7xl mx-auto px-4">
             {/* Buttons */}
             <button
-              onClick={() => document.getElementById("galleryScroll").scrollBy({ left: -300, behavior: 'smooth' })}
+              onClick={() => document.getElementById("galleryScroll")!.scrollBy({ left: -300, behavior: 'smooth' })}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/50 rounded-full hover:bg-black/70"
             >
               &#8592;
             </button>
             <button
-              onClick={() => document.getElementById("galleryScroll").scrollBy({ left: 300, behavior: 'smooth' })}
+              onClick={() => document.getElementById("galleryScroll")!.scrollBy({ left: 300, behavior: 'smooth' })}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/50 rounded-full hover:bg-black/70"
             >
               &#8594;
