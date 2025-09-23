@@ -96,7 +96,7 @@ function PosterModal({ posterSrc, onClose } : PosterModalProps ) {
 
 
 export default function Home() {
-  const [poster, setPoster] = useState(null);
+  const [poster, setPoster] = useState<string | null>(null);
   const [blur, setBlur] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
