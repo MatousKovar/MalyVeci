@@ -5,7 +5,6 @@ import Image from "next/image";
 import heroImg from "../../public/logomv.png"; 
 import heroImgMobile from "../../public/uvodka_mobil.png";
 import matous from "../../public/ja.jpeg";
-import mvmaly from "mvmaly.png";
 import mates from "../../public/basak.jpeg";
 import jiri from "../../public/2.png";
 import roubalka from "../../public/roubalka.jpeg";
