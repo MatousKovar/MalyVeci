@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
-import mvmaly from "mvmaly.png";
+import mvmaly from "/mvmaly.png";
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
