@@ -62,8 +62,12 @@ const members = [
   },
 ];
 
+type PosterModalProps = {
+  posterSrc: string | null;  // path to the image, can be null when closed
+  onClose: () => void;       // callback when closing
+};
 
-function PosterModal({ posterSrc, onClose }) {
+function PosterModal({ posterSrc, onClose } : PosterModalProps ) {
   if (!posterSrc) return null;
 
   return (
@@ -271,34 +275,29 @@ export default function Home() {
 
             <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
-                Svatba
+                Soukromá akce
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
-            <button
-              onClick={() => setPoster("/3.jpeg")}
-              className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
-              Zobrazit plakát
-            </button>
-              {/* <p className="text-gray-400">Místo: Sádky Sušice</p> */}
-            </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
-              <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Rockový večer u Hlaváčů
-              </h3>
-              <p className="text-gray-300 mb-2">Datum: 3.10.2025</p>
-              <p className="text-gray-400">Restaurace U Hlaváčků Horažďovice</p>
+              <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
+              <p className="text-gray-400">Strakonice</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Soukromá akce
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
+              <p className="text-gray-400">Strakonice</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Firemní večírek
+                Taneční zábava
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 6.12.2025</p>
+              <p className="text-gray-400">Jinín, Sál nad hostincem</p>
+              <button
+              onClick={() => setPoster("/h.jpg")}
+              className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+              Zobrazit plakát
+              </button>
             </div>
           </div>
         </section>
