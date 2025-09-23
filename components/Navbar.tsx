@@ -1,23 +1,37 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
+import mvmaly from "mvmaly.png";
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const links = ['O nás', 'Akce', 'Fotogalerie', 'Videa', 'Kontakty'];
+    const links = ['O nás', 'Akce', 'Fotogalerie', 'Videa', 'Kontakty', "Repertoár"];
   
     return (
-      <nav className="sticky top-0 z-50 bg-black/70 backdrop-blur-md text-white shadow-md">
+      <nav className="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-md text-white shadow-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             
   
             {/* Desktop menu */}
             <div className="hidden sm:flex space-x-8">
+              <Image
+                src="/mvmaly.png" // path to your logo (in /public/logo.png)
+                alt="Logo"
+                width={30} // adjust size
+                height={30}
+                className="object-contain"
+              />
               {links.map((link) => (
                 <a
                   key={link}
-                  href={`#${link === "O nás" ? "onas" : link}`}
+                  href={`#${
+                    link === "O nás"
+                      ? "onas"
+                      : link === "Repertoár"
+                      ? "repertoar"
+                      : link
+                  }`}
                   className="text-lg font-medium tracking-wide px-3 py-2 rounded-md transition-colors duration-300 hover:text-[#D90000]"
                 >
                   {link}
@@ -26,7 +40,7 @@ export default function Navbar() {
             </div>
   
             {/* Mobile menu button */}
-            <div className="sm:hidden">
+            <div className="sm:hidden flex items-center justify-between w-full px-4">              
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#D90000]"
@@ -53,13 +67,21 @@ export default function Navbar() {
                   </svg>
                 )}
               </button>
+              <Image
+                src="/mvmaly.png" // path to your logo (in /public/logo.png)
+                alt="Logo"
+                width={30} // adjust size
+                height={30}
+                className="object-contain"
+              />
+
             </div>
           </div>
         </div>
   
         {mobileOpen && (
-        <div className="sm:hidden fixed inset-0 top-16 z-50 bg-black/70 backdrop-blur-md top-16 left-0 w-full ">
-            <div className="px-4 pt-6 space-y-4 bg-black/70">
+        <div className="sm:hidden fixed inset-0 top-16 z-50 bg-black/30 backdrop-blur-md top-16 left-0 w-full ">
+            <div className="px-4 pt-6 space-y-4 bg-black/30">
             {links.map((link) => (
                 <a
                 key={link}

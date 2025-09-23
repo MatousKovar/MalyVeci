@@ -1,99 +1,188 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from "react";
 import Image from "next/image";
-import heroImg from "../../public/logomv2.png"; 
+import heroImg from "../../public/logomv.png"; 
+import heroImgMobile from "../../public/uvodka_mobil.png";
 import matous from "../../public/ja.jpeg";
+import mvmaly from "mvmaly.png";
 import mates from "../../public/basak.jpeg";
-import jiri from "../../public/jiri.jpeg";
+import jiri from "../../public/2.png";
 import roubalka from "../../public/roubalka.jpeg";
+import uvodka from "../../public/uvodka.jpg";
 import prokop from "../../public/prokop.jpeg";
 import Navbar from '../../components/Navbar';
 
 const images = [
-  matous,
-  mates,
-  "/foto1.jpeg",
-  "/foto2.jpeg",
-  "/3.jpeg",
-  "/4.jpeg",
-  "/5.jpeg",
-  "/6.jpg",
-  "/7.jpeg",
-  "/8.jpeg",
-  "/9.jpeg",
-  "/10.png",
-  "/11.jpg",
-  "/12.jpg",
-  "/13.jpeg",
-  "/14.jpg",
+  "/12.PNG",
+  "/1.PNG",
+  "/jinin.jpeg",
+  "/9.PNG",
+  "/15.jpeg",
+  "/houba.jpeg",
+  "/14.jpeg",
+  "/novosedly.jpeg",
+  "/10.PNG",
+  "/4.PNG",
+  "/5.PNG",
+  "/7.PNG",
+  "/8.PNG",
+  "/11.PNG",
 ];
 
 const members = [
   {
     name: "Matouš Kovář",
-    role: "Kytara",
-    bio: "Je to náš lídr, trenér, basák, kytarista, bubeník a zpěvák v jednom. A taky šéfdirigent všech nervů, protože všechno a všechny hlídá.Zavedl pravidlo: Před zkouškou a před koncertem – zákaz pití! (Pokud se někdo ptá proč, odpověď je většinou: „Protože jsem to řek.“) Hraje profesorsky! Jakmile hodí blbej pohled, všichni víme, že je zle. A díky YouTube už má skoro doktorát ze zvučení. Zpívat zásadně nechtěl, ale nebylo zbytí. A když mu dáte hodně lajků, možná dostane i vlastní sólovku. Možná. Jak Matouše nejvíc nasrat? Přijít na zkoušku o minutu pozdě. A slovy Jirky: „Nevim, co je horší – jestli nasranej Matouš, nebo když mlčí.“",
+    role: "Sólová kytara",
+    bio: "Kapelník, zvukař a tahoun celé kapely. Řídí zkoušky i koncerty, dohlíží na zvuk a zároveň přidává kytarová sóla, která dávají našim vystoupením drive.",
     image: matous,
   },
   {
     name: "Jiří Bártík",
-    role: "Nula",
-    bio: "Jirkovo kolínko je už ikonický. Zaměřte se na to – koleno vždycky hraje s náma. Je specialista na Hudbu Praha a taky náš strašickej Nohavica. Nebojácně zkouší, experimentuje a pouští se do tzv. Jirkovo inovací. Někdy to klapne, někdy to bouchne. Ale vždycky to stojí za to. Má nejvíc fanoušků na světě a shání nejvíc kšeftů. A taky to je autor všech plakátů, protože nikdo jinej by na to neměl nervy, Jirka by mohl mít vysokoškolský titul za práci s Canvou. A když zazpívá Zdá se mi, lidi to milujou. My taky.",
+    role: "Rytmická kytara",
+    bio: "Rytmická jistota a autor vizuálů kapely. Stará se o plakáty i grafiku, na pódiu přidává kytaru a vlastní nápady, které dodávají koncertům originální náboj.",
     image: jiri,
   },
   {
     name: "Denča Roubalka",
     role: "Zpěv",
-    bio: "Je to hlavní ozdoba a hlas našeho ansámblu, která je zodpovědná za většinu hlasovejch harmonií. Nenechte se zmást její výškou, protože v jejích 155 cm je vměstnána poctivá dávka rockový energie. Když zazní Rebel Yell nebo Ewa Farna, je jak utržená ze řetězu, to mi věřte. Je to taky hlavní módní policie Malejch věcí, takže ponožky v sandálech Vám na pódiu rozhodně neprojdou, zároveň je to hlavní správkyně sociálních sítí s doktorátem z tvorby hudebních kvízů a poutačů na koncerty. Na pódiu je k nezastavení a svými divokými pohyby láká nebohé smrtelníky do svých rockových spárů – pokud jí někdy dojde energie na zpěv, můžete si bejt jistý, že si jen schovává zbytek na skákání a tančení, čímž vydá na pohyb celý kapely. Pokud na Vás působí jako něžná duše – To jste ještě neslyšeli její pekelný „Banditi di Práááág“.",
+    bio: "Hlavní hlas kapely a královna pódiové energie. Stará se o sociální sítě i vizuální styl kapely a na pódiu kombinuje zpěv s tancem, takže se publikum nikdy nenudí.",
     image: roubalka,
   },
   {
     name: "Matijas Fojtů",
-    role: "Nejlepší kamarád",
-    bio: "Je to nejen basák, ale taky hlavní choreograf Malých Věcí. Když se spojí s Jirkou, vznikne tanec, co nemá obdoby (obvykle nemá ani smysl, ale o to víc to baví). Nejvíc ho baví hrát Jahody Mražený. Fakt. Zkuste se ho zeptat a budete to mít i s ukázkou. A když jde na kolena, víme, že jde do tuhýho. Jakmile přijde s ortézou, je jasný, že se blíží taneční peklo. Je to náš moderátor, bavič a ministr dobrý nálady. Autor většiny hlášek, co už si ani nepamatujem, ale furt je opakujem. A hlavně – je to srdcař. Takovej, co by s basou i tančil, kdyby to šlo. (A někdy to fakt zkouší.)",
+    role: "Basa",
+    bio: "Basák, bavič a moderátor večerů. Jeho rytmus drží kapelu pohromadě a jeho hlášky i improvizace baví publikum stejně jako hudba.",
     image: mates,
   },
   {
     name: "Prokop Roubal",
-    role: "Buben",
-    bio: "Je to chodící metronom. Ale jakmile začne hrát Máma táta, přepne na rychlost 2×. A ví proč. Miluje to tak moc, že prostě nemůže jinak. Specializuje se na házení paliček po lidech – nejčastěji se vzkazem: „Chyť si tempo sám!” Miluje Pražskej výběr a Lucii, takže když nevíme co hrát, pustíme mu to do uší a čekáme, co z něj vyleze. Občas prokopne nějakej ten buben a zároveň je to osvědčený setlist maker, který má právo veta. Společně se zpěvačkou tvoří nejlepší vokalistické duo Malých Věcí (poznámka: počkejte si na Žužu😉).",
+    role: "Bicí",
+    bio: "Metronom, který drží pevné tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
     image: prokop,
   },
 ];
 
 
+function PosterModal({ posterSrc, onClose }) {
+  if (!posterSrc) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+      <div className="relative bg-gray-900 p-4 rounded-xl shadow-xl">
+        {/* Poster image */}
+        <Image
+          src={posterSrc}
+          alt="Event Poster"
+          width={600}
+          height={800}
+          className="rounded-lg object-contain"
+        />
+
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  );
+}
 
 
 export default function Home() {
+  const [poster, setPoster] = useState(null);
+  const [blur, setBlur] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // grows blur as you scroll (max 20px)
+      setBlur(Math.min(scrollY / 50, 20));
+    };
+    const handleResize = () => setIsMobile(window.innerWidth < 768); 
+    handleResize();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     
-    <div className="bg-spotlight text-white">
-      {/* Top Navigation (sticky) */}
-      
-      <Navbar />
-      
+    <div className="relative text-stone-300">
 
-    {/* Hero section */}
-    <section className="relative w-full h-screen flex justify-center items-center bg-black ">
-      {/* Image container → 70% */}
-      <div className="flex  items-center -translate-y-25 sm:-translate-y-0">
-        <div className="  sm:mb-20 md:mb-0 relative w-90 h-90 sm:w-120 sm:h-120  md:w-150 md:h-150 lg:w-190 lg:h-190 brightness-75">
+
+      <div className="fixed inset-0 z-0">
+          <Image
+            src={uvodka}
+            alt="foto kapely pozadi"
+            fill
+            className="object-cover"
+            style={{ filter: 'blur(30px) brightness(0.25)' }}
+            priority
+          />
+      </div>
+
+        {/* Overlay to darken for readability */}
+      <div className="fixed inset-0 z-0 bg-black/30" />
+
+    
+    <Navbar />
+    
+
+   <section className="relative w-full h-screen flex justify-center items-center bg-black overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={uvodka}
+          alt="Foto kapely"
+          fill
+          className="object-cover transition-all duration-300"
+          style={{ filter: `blur(${blur}px)` }}
+          priority
+        />
+      </div>
+
+      {/* Overlay for better readability */}
+      <div className="relative w-full mt-80">
+      {/* Black bar background (matches image height) */}
+      <div className="absolute inset-0 bg-black/40" />
+
+        {/* Foreground content */}
+        <div className="relative z-10 py-6 brightness-75">
           <Image
             src={heroImg}
-            alt="Hero"
-            fill
-            className="object-contain align-bottom"
-            quality={100}
+            alt="Logo kapely"
+            width={400}
+            height={400}
+            className="mx-auto object-contain"
+            priority
           />
         </div>
       </div>
+      {/* Scroll Down Button */}
+      <button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 p-5 rounded-full bg-black/80 hover:bg-[#D90000] transition-colors duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
     </section>
 
       {/* Main Sections */}
       <main>
-        <section id="onas" className="py-20 bg-black text-white mt-50">
+        <section id="onas" className="py-20 bg-black text-white mt-20 z-10">
           <h2
             className="text-stroke-3 text-5xl font-bold font-orbitron text-center mb-12 
             sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-stroke-8 lg:text-8xl"
@@ -101,28 +190,38 @@ export default function Home() {
             <span className="text-black brightness-85">O </span>
             <span className="text-[#D90000] brightness-85">KAPELE</span>
           </h2>
-          <div className=" text-md mx-5 md:mx-30 grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-            <p className=" text-center mx-auto max-w-3xl  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg">
-                  Jsme Malý Věci, a hrajem rocknroll!
-                  
-                  Ahoj, jsme mladá pětičlenná kapela ze Strakonicka, pětice vysokoškoláků z různých oborů, které spojuje vášeň k hudbě a chuť hrát a bavit lidi! Každý koncert je pro nás příležitost předat energii a udělat show, při které se prostě nedá zůstat sedět.
-                  
-                  Na pódiu nás najdete v této sestavě:
-                  ​•​Bc. Matyáš Fojtů – basa
-                  ​•​Bc. Denisa Roubalová – zpěv
-                  ​•​Bc. Jiří Bártík – kytara
-                  ​•​Bc. Matouš Kovář – kytara
-                  ​•​Petr Roubal – bicí
-                  
+          <div className=" flex text-md mx-35 md:mx-45 sm:my-16 grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-30 z-10 text-center">
+            {/* <p className=" text-center mx-auto max-w-140  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg z-10"> */}
+            <div className=" text-left text-stone-300 mx-auto max-w-140  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg z-10">
+            <p className="mb-3">
+            Jsme Malý Věci! Trochu jiná zábavová kapela.</p>
+            <p className="mb-3">
+            Naše pětičlenná parta vznikla v roce 2024 ve Strakonicích původně jako způsob, jak trávit volný čas s nástroji v ruce. Brzy nás ale začalo lákat hrát i pro lidi – a tak jsme už během prvního roku existence odehráli 19 akcí, mezi nimi dva firemní večírky, dvě svatby, a ještě k tomu zvládli i státnice.
             </p>
-            <p className="text-center mx-auto max-w-3xl leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg">
-                  Pět lidí, hromada energie a pořádnej balík songů – to jsme my! Postaráme se o to, aby vaše svatba, ples nebo jakákoli akce jela na plný pecky. V našem playlistu je všechno- od popových hitů (Měls mě vůbec rád, Katy Perry), přes českou klasiku (Kabáti) až po světové rockové legendy (Judas Priest, AC/DC).
+            <p>Řídime se dvěmi hlavními motty:</p>            
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong className="text-[#D90000]">Pestrý repertoár</strong> – chceme, aby si na své přišli mladší, starší, rockovější i popovější posluchači. Proto hrajeme co nejvíce různých žánrů – od Katy Perry, přes Kabáty až po Bon Jovi.</li>
+              <li><strong className="text-stone-500">Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevou jak pohybem, tak zapálením při hraní, publikum tedy bavíme jak vizuálně, tak hudebně!</li>
+            </ul>
+      
                   
-                  Máme zkušenosti s různými druhy akcí, od koncertů na náměstích, soukromých akcí, až po svatbu- v každém případě se snažíme vždycky vytvořit atmosféru, kde se lidé baví, zpívají a tančí. Protože o to nám jde především!
-            </p>
-
+              </div>
+            {/* </p> */}
+            <div className=" text-left text-stone-300 mx-auto max-w-140  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg z-10">
+            <p className="mb-3">
+              Jsme technicky vybavená kapela, vlastníme jak ozvučovací soustavu, tak základní osvětlení, takže váš parket nebude nikdy vypadat nudně. Zkrátka zníme i vypadáme profesionálně. Po domluvě jsme schopní doplnit naše vystoupení i o DJ.
+            </p>      
+            <p className="mb-3"> <strong>Proč si vybrat kapelu Malý Věci?</strong></p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Pestrý repertoár pro všechny generace</strong> - náš aktuální repertoár čítá přes 90 kousků, napříč žánry a etapami populární hudby. Chcete rockový koncert, retro party ve stylu 80 let, nebo jen prostě klasickou tancovačku se skladbami které znáte a milujete? Pak jsme ti praví.</li>
+              {/* <li><strong>Vlastní vybavení</strong></li> */}
+              <li><strong>Jsme mladá krev</strong> - naše vystoupení je stejně tak o hodbě, jako o energii a atmosféře, když hrajeme, tak prostě nevydržíme stát na místě.</li>
+              <li><strong>Levnější než konkurence</strong> - hudba pro nás nikdy nebyla o penězích, proto vyjdeme vstříct i pořadatelům menších akcí. </li>
+              
+            </ul>
+            </div>
           </div>
-          <div className="max-w-5xl mx-auto space-y-16 px-4">
+          <div className="relative max-w-5xl mx-auto space-y-16 px-4 z-10">
             {members.map((member, i) => (
               <div
                 key={i}
@@ -139,18 +238,18 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-4 md:mt-0 text-left md:max-w-xl">
-                  <h3 className="text-xl font-semibold text-[#D90000]">
+                  <h3 className="text-xl font-semibold text-[#D90000] z-10">
                     {member.name}
                   </h3>
-                  <p className="text-gray-300 italic">{member.role}</p>
-                  <p className="text-gray-400 mt-2">{member.bio}</p>
+                  <p className="text-gray-300 italic z-10">{member.role}</p>
+                  <p className="text-gray-400 mt-2 z-20">{member.bio}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="Akce" className="py-20 text-center bg-black">
+        <section id="Akce" className="py-20 text-center bg-black z-100">
           <h2
             className="brightness-85 text-5xl text-stroke-3 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
@@ -158,34 +257,45 @@ export default function Home() {
             <span className="text-[#D90000]">KCE</span>
           </h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-4">
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Firemní večírek
+                Rockový večer u Hlaváčů
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 3.10.2025</p>
+              <p className="text-gray-400">Restaurace U Hlaváčků Horažďovice</p>
+              <button
+              onClick={() => setPoster("/hlavacci.jpeg")}
+              className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+              Zobrazit plakát
+            </button>
             </div>
 
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
                 Svatba
               </h3>
               <p className="text-gray-300 mb-2">Datum: 5.9.2025</p>
+            <button
+              onClick={() => setPoster("/3.jpeg")}
+              className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+              Zobrazit plakát
+            </button>
               {/* <p className="text-gray-400">Místo: Sádky Sušice</p> */}
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Rockový večer u Hlaváčů
               </h3>
               <p className="text-gray-300 mb-2">Datum: 3.10.2025</p>
               <p className="text-gray-400">Restaurace U Hlaváčků Horažďovice</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Soukromá akce
               </h3>
               <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Firemní večírek
               </h3>
@@ -202,44 +312,75 @@ export default function Home() {
             <span className="text-black">FO</span>
             <span className="text-[#D90000]">TOGRAFIE</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 overflow-hidden max-w-7xl mx-auto">
-            {images.map((src, i) => (
-              <div
-                key={i}
-                className="rounded-lg overflow-hidden shadow-lg cursor-pointer"
-              >
-                <Image
-                  src={src}
-                  alt={`Gallery ${i}`}
-                  width={300}
-                  height={100}
-                  objectFit="cover"
-                  className="w-full h-full"
-                />
-              </div>
-            ))}
+
+          <div className="relative max-w-7xl mx-auto px-4">
+            {/* Buttons */}
+            <button
+              onClick={() => document.getElementById("galleryScroll").scrollBy({ left: -300, behavior: 'smooth' })}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/50 rounded-full hover:bg-black/70"
+            >
+              &#8592;
+            </button>
+            <button
+              onClick={() => document.getElementById("galleryScroll").scrollBy({ left: 300, behavior: 'smooth' })}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/50 rounded-full hover:bg-black/70"
+            >
+              &#8594;
+            </button>
+
+            {/* Scrollable gallery */}
+            <div
+              id="galleryScroll"
+              className="flex overflow-x-auto gap-4 scroll-smooth py-4 no-scrollbar"
+            >
+              {images.map((src, i) => (
+                <div
+                  key={i}
+                  className=" flex-shrink-0 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+                >
+                  <Image
+                    src={src}
+                    alt={`Gallery ${i}`}
+                    width={300}
+                    height={200}
+                    objectFit="cover"
+                    className="w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
         {/* Videa sectoin*/}
-        <section id="Videa" className="py-20 bg-black text-white flex flex-col items-center">
+        <section id="Videa" className="relative py-20 text-white flex flex-col items-center">
           <h2
             className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
           >
-            <span className="text-black">V</span>
-            <span className="text-[#D90000]">IDEA</span>
+            <span className="text-black">PO</span>
+            <span className="text-[#D90000]">SLECHNI SI NÁS</span>
           </h2>
+          <p className="mb-15">
+            Mnoho ukázek našeho hraní naleznete na našem 
+            <a href="https://www.instagram.com/maly.veci.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> Instagramu</a> a také na 
+            <a href="https://www.youtube.com/@Mal%C3%BDV%C4%9BciOfficial/videos">YouTube</a>.
+          </p>
 
-          <iframe
-            className="w-0.8 md:w-full max-w-3xl h-80 sm:h-96 md:h-[500px] rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/Hst2OSsuG2I"
-            frameBorder="0"
-            allowFullScreen
-            title="Nardrazi florenc maly veci"
-          ></iframe>
+          {/* Responsive iframe wrapper */}
+          <div className="w-full max-w-3xl aspect-video">
+            <iframe
+              className="w-full h-full rounded-xl"
+              src="https://www.youtube.com/embed/t0U3Jbou_bI?si=9RBactRjuKwWm5T6"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
         </section>
-
         {/* Kontakty Section */}
-        <section id="Kontakty" className="py-20 bg-black text-white">
+        <section id="Kontakty" className=" relative py-20 text-stone-300">
           <h2
             className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
@@ -247,12 +388,22 @@ export default function Home() {
             <span className="text-[#D90000]">ONTAKTY</span>
           </h2>
           <div className="max-w-5xl mx-auto text-center px-4">
-            <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Kontaktujte nás na emailu: <span className="text-[#D90000]">malyveci.band@gmail.com</span>
-            </p>
-            <p className="text-lg md:text-xl text-gray-300">
-              Nebo na telefonním čísle: <span className="text-[#D90000]">+420 774 236 616</span>
-            </p>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg text-center">
+              <p className="text-sm uppercase text-gray-400">Email</p>
+              <a href="mailto:malyveci.band@gmail.com" 
+                className="text-[#D90000] text-lg font-semibold hover:underline">
+                malyveci.band@gmail.com
+              </a>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-xl shadow-lg text-center">
+              <p className="text-sm uppercase text-gray-400">Telefon</p>
+              <a href="tel:+420774236616" 
+                className="text-[#D90000] text-lg font-semibold hover:underline">
+                +420 774 236 616
+              </a>
+            </div>
+          </div>
             <div className=" w-full h-auto py-8 flex items-center justify-center gap-2 flex-wrap">
               <a href="https://www.facebook.com/share/1JLvMbwvA1/?mibextid=wwXIfr"
               className="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
@@ -283,22 +434,30 @@ export default function Home() {
           </div>
         </section>
 
-
-        <div className="w-full overflow-x-auto mx-auto">
-          <div className="flex space-x-4 w-max mx-auto mb-5">
-            {/* Song 1 */}
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6K4r3XENOKeXFTKlBlAJLC?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            
+        <section id="repertoar" className=" relative py-20 text-white flex flex-col items-center">
+          <h2
+            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
+          >
+            <span className="text-black">RE</span>
+            <span className="text-[#D90000]">PERTOÁR</span>
+          </h2>
+          <p className="text-stone-300 text-center text-2xl">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím kontaktujte.</p>
+          <div className="w-full overflow-x-auto mx-15 relative mt-15 px-6">
+            <div className="flex space-x-4 w-max mx-15 mb-5 ">
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6K4r3XENOKeXFTKlBlAJLC?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              
+            </div>
           </div>
-        </div>
+        </section>
       </main>
+      <PosterModal posterSrc={poster} onClose={() => setPoster(null)} />
     </div>
   );
 }

@@ -52,7 +52,10 @@ body {
     background-color: #000; /* black */
     color: #E4E4E4; /* text color */
 }
-
+ 
+html{
+  scroll-behavior: smooth;
+}
 
 @font-face {  font-family: "Orbitron";  
   font-style: normal;  
