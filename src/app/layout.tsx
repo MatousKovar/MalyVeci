@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Kapela Malý Věci",
   description: "Mladá zábavová kapela z okolí Strakonic a Horažďovic",
   icons: {
-    icon: "/favicon.ico", // Path from /public
+    icon: "/favicon.svg", // Path from /public
   },
 };
 
