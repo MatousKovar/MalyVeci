@@ -77,9 +77,9 @@ function PosterModal({ posterSrc, onClose } : PosterModalProps ) {
         <Image
           src={posterSrc}
           alt="Event Poster"
-          width={600}
-          height={800}
-          className="rounded-lg object-contain"
+          width={500}
+          height={500}
+          className="rounded-lg object-contain w-full h-auto"
         />
 
         {/* Close button */}
@@ -201,10 +201,10 @@ export default function Home() {
             <p className="mb-3">
             Naše pětičlenná parta vznikla v roce 2024 ve Strakonicích původně jako způsob, jak trávit volný čas s nástroji v ruce. Brzy nás ale začalo lákat hrát i pro lidi – a tak jsme už během prvního roku existence odehráli 19 akcí, mezi nimi dva firemní večírky, dvě svatby, a ještě k tomu zvládli i státnice.
             </p>
-            <p>Řídime se dvěmi hlavními motty:</p>            
+            <p className="text-[#D90000]"><strong>Řídime se dvěma hlavními motty:</strong></p>            
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong className="text-[#D90000]">Pestrý repertoár</strong> – chceme, aby si na své přišli mladší, starší, rockovější i popovější posluchači. Proto hrajeme co nejvíce různých žánrů – od Katy Perry, přes Kabáty až po Bon Jovi.</li>
-              <li><strong className="text-stone-500">Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevou jak pohybem, tak zapálením při hraní, publikum tedy bavíme jak vizuálně, tak hudebně!</li>
+              <li><strong >Pestrý repertoár</strong> – chceme, aby si na své přišli mladší, starší, rockovější i popovější posluchači. Proto hrajeme co nejvíce různých žánrů – od Katy Perry, přes Kabáty až po Bon Jovi.</li>
+              <li><strong >Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevou jak pohybem, tak zapálením při hraní, publikum tedy bavíme jak vizuálně, tak hudebně!</li>
             </ul>
       
                   
@@ -214,12 +214,12 @@ export default function Home() {
             <p className="mb-3">
               Jsme technicky vybavená kapela, vlastníme jak ozvučovací soustavu, tak základní osvětlení, takže váš parket nebude nikdy vypadat nudně. Zkrátka zníme i vypadáme profesionálně. Po domluvě jsme schopní doplnit naše vystoupení i o DJ.
             </p>      
-            <p className="mb-3"> <strong>Proč si vybrat kapelu Malý Věci?</strong></p>
+            <p className="mb-3"> <strong className="text-[#D90000]">Proč si vybrat kapelu Malý Věci?</strong></p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Pestrý repertoár pro všechny generace</strong> - náš aktuální repertoár čítá přes 90 kousků, napříč žánry a etapami populární hudby. Chcete rockový koncert, retro party ve stylu 80 let, nebo jen prostě klasickou tancovačku se skladbami které znáte a milujete? Pak jsme ti praví.</li>
               {/* <li><strong>Vlastní vybavení</strong></li> */}
-              <li><strong>Jsme mladá krev</strong> - naše vystoupení je stejně tak o hodbě, jako o energii a atmosféře, když hrajeme, tak prostě nevydržíme stát na místě.</li>
-              <li><strong>Levnější než konkurence</strong> - hudba pro nás nikdy nebyla o penězích, proto vyjdeme vstříct i pořadatelům menších akcí. </li>
+              <li><strong>Jsme mladá krev</strong> - naše vystoupení je stejně tak o hudbě, jako o energii a atmosféře, když hrajeme, tak prostě nevydržíme stát na místě.</li>
+              <li><strong>Levnější než konkurence</strong> - hudba pro nás nikdy nebyla o penězích, proto vyjdeme vstříc i pořadatelům menších akcí. </li>
               
             </ul>
             </div>
