@@ -15,9 +15,18 @@ module.exports = {
         },
         fontFamily: {
           'orbitron': ['Orbitron', 'sans-serif']
-        }
+        },
+        keyframes: {
+          glow: {
+            "0%, 100%": {boxShadow: "0 0 10px #D90000, 0 0 20px #D90000" },
+            "50%": { boxShadow: "0 0 25px #FF0000, 0 0 40px #FF0000" },
+          },
+        },
+        animation: {
+          glow: "glow 2s ease-in-out infinite",
+        },
       },
-    },
+    },  
     plugins: [],
     safelist: [
       "text-stroke-2",
@@ -35,4 +44,3 @@ module.exports = {
       "lg:text-stroke-8",
     ],
   }
-  

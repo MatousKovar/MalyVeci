@@ -81,7 +81,7 @@ export default function Navbar() {
   
         {mobileOpen && (
         <div className="sm:hidden fixed inset-0 top-16 z-50 bg-black/30 backdrop-blur-md top-16 left-0 w-full ">
-            <div className="px-4 pt-6 space-y-4 bg-black/30">
+            <div className="px-4 pt-6 space-y-4 bg-black/40">
             {links.map((link) => (
                 <a
                 key={link}
@@ -92,7 +92,7 @@ export default function Navbar() {
                     ? "repertoar"
                     : link
                 }`}
-                className="block px-3 py-2 rounded-md text-lg font-medium text-gray-300 hover:text-[#D90000] hover:bg-white/10"
+                className="font-bold block px-3 py-2 rounded-md text-lg font-medium text-gray-300 hover:text-[#D90000] hover:bg-white/10"
                 onClick={() => setMobileOpen(false)}
                 >
                 {link}

@@ -49,7 +49,7 @@ const members = [
     image: roubalka,
   },
   {
-    name: "Matijas Fojtů",
+    name: "Matyáš Fojtů",
     role: "Basa",
     bio: "Basák, bavič a moderátor večerů. Jeho rytmus drží kapelu pohromadě a jeho hlášky i improvizace baví publikum stejně jako hudba.",
     image: mates,
@@ -162,7 +162,7 @@ export default function Home() {
       <div className="absolute md:hidden inset-0">
         <Image
           src={heroImgMobile}
-          alt="Foto kapely"
+          alt="foto kapely mobil"
           fill
           className="object-cover transition-all duration-300"
           style={{ filter: `blur(${blur}px)` }}
@@ -173,36 +173,36 @@ export default function Home() {
       {/* Overlay for better readability */}
       <div className="relative w-full mt-80">
       {/* Black bar background (matches image height) */}
-      <div className="absolute inset-0 bg-black/40" />
-
+      <div className="absolute inset-0 bg-black/30" />
         {/* Foreground content */}
-        <div className="relative z-10 py-6 brightness-75">
+        <div className="relative mx-auto w-64 h-50 md:w-96 md:h-75 brightness-75 z-10">
           <Image
             src={heroImg}
             alt="Logo kapely"
-            width={400}
-            height={400}
-            className="mx-auto object-contain"
+            fill
+            className="object-contain filter z-5"
             priority
-          />
+           />
+          
         </div>
       </div>
-      {/* Scroll Down Button */}
-      <button
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 p-5 rounded-full bg-black/80 hover:bg-[#D90000] transition-colors duration-300"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
+
+        {/* Scroll Down Button */}
+        <button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          className="absolute animate-bounce bottom-6 left-1/2 -translate-x-1/2 p-5 rounded-full bg-black/80 hover:bg-[#D90000] transition-colors duration-300"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
     </section>
 
       {/* Main Sections */}
@@ -282,7 +282,7 @@ export default function Home() {
             <span className="text-[#D90000]">KCE</span>
           </h2>
           <div className="max-w-4xl mx-auto mx-10 grid md:grid-cols-2 gap-8 px-4">
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Rockový večer u Hlaváčů
               </h3>
@@ -295,21 +295,21 @@ export default function Home() {
             </button>
           </div>
 
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
                 Soukromá akce
               </h3>
               <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Soukromá akce
               </h3>
               <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Taneční zábava
               </h3>
@@ -325,7 +325,7 @@ export default function Home() {
         </section>
         
         {/* galerie */}
-        <section id="Fotogalerie" className="py-20 bg-spotlight text-white">
+        <section id="Fotogalerie" className="py-20t text-white">
           <h2
             className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
           >
@@ -360,7 +360,8 @@ export default function Home() {
                 >
                   <Image
                     src={src}
-                    alt={`Gallery ${i}`}
+                    alt={`Kapela foto ${i}`}
+                    onClick={() => setPoster(src)}
                     width={300}
                     height={200}
                     objectFit="cover"
@@ -399,6 +400,39 @@ export default function Home() {
             ></iframe>
           </div>
         </section>
+        
+        <section id="repertoar" className=" relative py-20 text-white flex flex-col items-center">
+          <h2
+            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
+          >
+            <span className="text-black">RE</span>
+            <span className="text-[#D90000]">PERTOÁR</span>
+          </h2>
+          <p className="text-stone-300 text-xl text-center md:text-2xl mx-10">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím 
+          <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]"href="#Kontakty"> kontaktujte.</a>
+          </p>
+            <div className="w-full max-w-6xl overflow-x-hidden mt-15">
+              {/* Scrolling wrapper */}
+              <div className="flex animate-scroll space-x-4 w-max">
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/7yy1E4CAVun8vq75NMQ6FD?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2IJftBfq7pJ43tfnOR0RB3?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3k2mJZM0fdqDmW7GUbq2zs?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/29uKzagduhFDTWPCjqaGOg?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4yKFAIgwISeVWcNnatlxx3?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/0jWgAnTrNZmOGmqgvHhZEm?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6K4r3XENOKeXFTKlBlAJLC?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+            </div>
+        </section>
+
+
         {/* Kontakty Section */}
         <section id="Kontakty" className=" relative py-20 text-stone-300">
           <h2
@@ -409,14 +443,14 @@ export default function Home() {
           </h2>
           <div className="max-w-5xl mx-auto text-center px-4">
           <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg text-center">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg text-center">
               <p className="text-sm uppercase text-gray-400">Email</p>
               <a href="mailto:malyveci.band@gmail.com" 
                 className="text-[#D90000] text-lg font-semibold hover:underline">
                 malyveci.band@gmail.com
               </a>
             </div>
-            <div className="bg-stone-800 p-6 rounded-xl shadow-lg text-center">
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg text-center">
               <p className="text-sm uppercase text-gray-400">Telefon</p>
               <a href="tel:+420774236616" 
                 className="text-[#D90000] text-lg font-semibold hover:underline">
@@ -454,30 +488,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="repertoar" className=" relative py-20 text-white flex flex-col items-center">
-          <h2
-            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
-          >
-            <span className="text-black">RE</span>
-            <span className="text-[#D90000]">PERTOÁR</span>
-          </h2>
-          <p className="text-stone-300 text-xl text-center md:text-2xl mx-10">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím 
-          <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]"href="#Kontakty"> kontaktujte.</a>
-          </p>
-          <div className="w-full overflow-x-auto relative mt-15">
-            <div className="flex space-x-4 w-max mb-5 ">
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6K4r3XENOKeXFTKlBlAJLC?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              
-            </div>
-          </div>
-        </section>
       </main>
       <PosterModal posterSrc={poster} onClose={() => setPoster(null)} />
     </div>
