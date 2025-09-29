@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import React from "react";
 import Image from "next/image";
 import heroImg from "../../public/logomv.png"; 
-// import heroImgMobile from "../../public/uvodka_mobil.png";
+import heroImgMobile from "../../public/uvodka_mobil.jpeg";
 import matous from "../../public/ja.jpeg";
 import mates from "../../public/basak.jpeg";
 import jiri from "../../public/2.png";
@@ -43,7 +43,7 @@ const members = [
     image: jiri,
   },
   {
-    name: "Denča Roubalka",
+    name: "Denisa Roubalová",
     role: "Zpěv",
     bio: "Hlavní hlas kapely a královna pódiové energie. Stará se o sociální sítě i vizuální styl kapely a na pódiu kombinuje zpěv s tancem, takže se publikum nikdy nenudí.",
     image: roubalka,
@@ -55,7 +55,7 @@ const members = [
     image: mates,
   },
   {
-    name: "Prokop Roubal",
+    name: "Petr Roubal",
     role: "Bicí",
     bio: "Metronom, který drží pevné tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
     image: prokop,
@@ -116,30 +116,52 @@ export default function Home() {
     
     <div className="relative text-stone-300">
 
-
-      <div className="fixed inset-0 z-0">
+      {/* Background */}
+      <div className="fixed sm:block inset-0 z-0">
           <Image
             src={uvodka}
             alt="foto kapely pozadi"
             fill
             className="object-cover"
-            style={{ filter: 'blur(30px) brightness(0.25)' }}
+            style={{ filter: 'blur(30px) brightness(0.35)' }}
+            priority
+          />
+      </div>
+    {/* background mobile */}
+      <div className="fixed md:hidden inset-0 z-0">
+          <Image
+            src={heroImgMobile}
+            alt="foto kapely pozadi"
+            fill
+            className="object-cover"
+            style={{ filter: 'blur(30px) brightness(0.35)' }}
             priority
           />
       </div>
 
         {/* Overlay to darken for readability */}
-      <div className="fixed inset-0 z-0 bg-black/30" />
+      {/* <div className="fixed inset-0 z-0 bg-black/30" /> */}
 
     
     <Navbar />
     
 
    <section className="relative w-full h-screen flex justify-center items-center bg-black overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* hero image */}
+      <div className="absolute sm:block inset-0">
         <Image
           src={uvodka}
+          alt="Foto kapely"
+          fill
+          className="object-cover transition-all duration-300"
+          style={{ filter: `blur(${blur}px)` }}
+          priority
+        />
+      </div>
+      {/* Hero image mobile */}
+      <div className="absolute md:hidden inset-0">
+        <Image
+          src={heroImgMobile}
           alt="Foto kapely"
           fill
           className="object-cover transition-all duration-300"
@@ -193,7 +215,7 @@ export default function Home() {
             <span className="text-black brightness-85">O </span>
             <span className="text-[#D90000] brightness-85">KAPELE</span>
           </h2>
-          <div className=" flex text-md mx-35 md:mx-45 sm:my-16 grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-30 z-10 text-center">
+          <div className=" flex text-md md:mx-45 mx-10 sm:my-16 grid sm:grid-cols-1 md:grid-cols-2 gap-4 mb-30 z-10 text-center">
             {/* <p className=" text-center mx-auto max-w-140  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg z-10"> */}
             <div className=" text-left text-stone-300 mx-auto max-w-140  leading-relaxed text-gray-100 px-4 py-4 rounded-lg shadow-lg z-10">
             <p className="mb-3">
@@ -201,7 +223,7 @@ export default function Home() {
             <p className="mb-3">
             Naše pětičlenná parta vznikla v roce 2024 ve Strakonicích původně jako způsob, jak trávit volný čas s nástroji v ruce. Brzy nás ale začalo lákat hrát i pro lidi – a tak jsme už během prvního roku existence odehráli 19 akcí, mezi nimi dva firemní večírky, dvě svatby, a ještě k tomu zvládli i státnice.
             </p>
-            <p className="text-[#D90000]"><strong>Řídime se dvěma hlavními motty:</strong></p>            
+            <p className="text-[#D90000] text-lg mb-3"><strong>Řídime se dvěma hlavními motty:</strong></p>            
             <ul className="list-disc pl-6 space-y-2">
               <li><strong >Pestrý repertoár</strong> – chceme, aby si na své přišli mladší, starší, rockovější i popovější posluchači. Proto hrajeme co nejvíce různých žánrů – od Katy Perry, přes Kabáty až po Bon Jovi.</li>
               <li><strong >Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevou jak pohybem, tak zapálením při hraní, publikum tedy bavíme jak vizuálně, tak hudebně!</li>
@@ -214,7 +236,7 @@ export default function Home() {
             <p className="mb-3">
               Jsme technicky vybavená kapela, vlastníme jak ozvučovací soustavu, tak základní osvětlení, takže váš parket nebude nikdy vypadat nudně. Zkrátka zníme i vypadáme profesionálně. Po domluvě jsme schopní doplnit naše vystoupení i o DJ.
             </p>      
-            <p className="mb-3"> <strong className="text-[#D90000]">Proč si vybrat kapelu Malý Věci?</strong></p>
+            <p className="mb-3 text-lg"> <strong className="text-[#D90000]">Proč si vybrat kapelu Malý Věci?</strong></p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Pestrý repertoár pro všechny generace</strong> - náš aktuální repertoár čítá přes 90 kousků, napříč žánry a etapami populární hudby. Chcete rockový koncert, retro party ve stylu 80 let, nebo jen prostě klasickou tancovačku se skladbami které znáte a milujete? Pak jsme ti praví.</li>
               {/* <li><strong>Vlastní vybavení</strong></li> */}
@@ -228,7 +250,7 @@ export default function Home() {
             {members.map((member, i) => (
               <div
                 key={i}
-                className={`flex flex-col overflow-hidden lg:flex-row items-center lg:items-start md:space-x-8 ${
+                className={`flex mx-10 flex-col overflow-hidden lg:flex-row items-center lg:items-start md:space-x-8 ${
                   i % 2 === 0 ? "" : "lg:flex-row-reverse lg:space-x-reverse"
                 }`}
               >
@@ -254,13 +276,13 @@ export default function Home() {
 
         <section id="Akce" className="py-20 text-center bg-black z-100">
           <h2
-            className="brightness-85 text-5xl text-stroke-3 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="brightness-85 text-6xl text-stroke-3 font-bold font-orbitron text-center mb-12 sm:text-7xl md:text-7xl md:text-stroke-4 lg:text-8xl lg:text-stroke-3"
           >
             <span className="text-black">A</span>
             <span className="text-[#D90000]">KCE</span>
           </h2>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-4">
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
+          <div className="max-w-4xl mx-auto mx-10 grid md:grid-cols-2 gap-8 px-4">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Rockový večer u Hlaváčů
               </h3>
@@ -271,23 +293,23 @@ export default function Home() {
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
               Zobrazit plakát
             </button>
-            </div>
+          </div>
 
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
                 Soukromá akce
               </h3>
               <p className="text-gray-300 mb-2">Datum: 11.10.2025</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Soukromá akce
               </h3>
               <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg z-10">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Taneční zábava
               </h3>
@@ -353,15 +375,15 @@ export default function Home() {
         {/* Videa sectoin*/}
         <section id="Videa" className="relative py-20 text-white flex flex-col items-center">
           <h2
-            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
+            className="text-5xl mx-10 text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
           >
             <span className="text-black">PO</span>
             <span className="text-[#D90000]">SLECHNI SI NÁS</span>
           </h2>
-          <p className="mb-15">
+          <p className="mb-15 text-center text-xl px-10 text-stone-300">
             Mnoho ukázek našeho hraní naleznete na našem 
-            <a href="https://www.instagram.com/maly.veci.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> Instagramu</a> a také na 
-            <a href="https://www.youtube.com/@Mal%C3%BDV%C4%9BciOfficial/videos">YouTube</a>.
+            <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]" href="https://www.instagram.com/maly.veci.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> Instagramu </a> a také na 
+            <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]" href="https://www.youtube.com/@Mal%C3%BDV%C4%9BciOfficial/videos"> YouTube</a>.
           </p>
 
           {/* Responsive iframe wrapper */}
@@ -387,14 +409,14 @@ export default function Home() {
           </h2>
           <div className="max-w-5xl mx-auto text-center px-4">
           <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg text-center">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg text-center">
               <p className="text-sm uppercase text-gray-400">Email</p>
               <a href="mailto:malyveci.band@gmail.com" 
                 className="text-[#D90000] text-lg font-semibold hover:underline">
                 malyveci.band@gmail.com
               </a>
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl shadow-lg text-center">
+            <div className="bg-stone-800 p-6 rounded-xl shadow-lg text-center">
               <p className="text-sm uppercase text-gray-400">Telefon</p>
               <a href="tel:+420774236616" 
                 className="text-[#D90000] text-lg font-semibold hover:underline">
@@ -439,9 +461,11 @@ export default function Home() {
             <span className="text-black">RE</span>
             <span className="text-[#D90000]">PERTOÁR</span>
           </h2>
-          <p className="text-stone-300 text-center text-2xl">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím kontaktujte.</p>
-          <div className="w-full overflow-x-auto mx-15 relative mt-15 px-6">
-            <div className="flex space-x-4 w-max mx-15 mb-5 ">
+          <p className="text-stone-300 text-xl text-center md:text-2xl mx-10">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím 
+          <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]"href="#Kontakty"> kontaktujte.</a>
+          </p>
+          <div className="w-full overflow-x-auto relative mt-15">
+            <div className="flex space-x-4 w-max mb-5 ">
               <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6wnc03soJZURZVtyAbK81X?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5qYKPSKeZb83S0kFskJkPJ?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

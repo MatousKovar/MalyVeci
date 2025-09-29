@@ -85,7 +85,13 @@ export default function Navbar() {
             {links.map((link) => (
                 <a
                 key={link}
-                href={`#${link.replace(/\s/g, '')}`}
+                href={`#${
+                  link === "O nás"
+                    ? "onas"
+                    : link === "Repertoár"
+                    ? "repertoar"
+                    : link
+                }`}
                 className="block px-3 py-2 rounded-md text-lg font-medium text-gray-300 hover:text-[#D90000] hover:bg-white/10"
                 onClick={() => setMobileOpen(false)}
                 >
