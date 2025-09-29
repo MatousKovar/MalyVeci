@@ -225,7 +225,7 @@ export default function Home() {
             <p className="text-[#D90000] text-lg mb-3"><strong>Řídime se dvěma hlavními motty:</strong></p>            
             <ul className="list-disc pl-6 space-y-2 mb-3">
               <li><strong >Pestrý repertoár</strong> – chceme, aby si na své přišli mladší, starší, rockovější i popovější posluchači. Proto hrajeme co nejvíce různých žánrů – od Katy Perry, přes Kabáty až po Bon Jovi.</li>
-              <li><strong >Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevo jak pohybem, tak zapálením při hraní</li>
+              <li><strong >Hudba nás musí bavit</strong> - pokud hudba baví kapelu, tak to baví i lidi. Naší hlavní motivací je láska k hudbě, kterou často dáváme najevo jak pohybem, tak zapálením při hraní.</li>
             </ul>
 
             <p className="mb-3">
