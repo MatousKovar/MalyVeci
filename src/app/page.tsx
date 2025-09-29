@@ -314,11 +314,11 @@ export default function Home() {
               </h3>
               <p className="text-gray-300 mb-2">Datum: 6.12.2025</p>
               <p className="text-gray-400">Jinín, Sál nad hostincem</p>
-              <button
+              {/* <button
               onClick={() => setPoster("/h.jpg")}
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
               Zobrazit plakát
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -486,7 +486,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        <section id="Kontakty" className=" relative text-center text-stone-300">
+        <p className="text-[#D90000] text-sm">
+          © {new Date().getFullYear()} Matouš Kovář. 
+          Všechna práva vyhrazena.
+        </p>
+        </section>
       </main>
       <PosterModal posterSrc={poster} onClose={() => setPoster(null)} />
     </div>
