@@ -23,27 +23,26 @@
   }
 }
 
+
+@utility text-stroke-2 {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #E4E4E4;
+}
+
+@utility text-stroke-3 {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #E4E4E4;
+}
+
+@utility text-stroke-4 {
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #E4E4E4;
+}
+
 /* Obtazeni okraju */
 @layer utilities {
     .font-orbitron {
       font-family: "Orbitron", sans-serif;
-    }
-
-    .text-stroke-2 {
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #E4E4E4;
-    }
-    .bg-spotlight {
-      background: radial-gradient(circle at center, #111 0%, #000 80%);
-    }
-    
-    .text-stroke-3 {
-      -webkit-text-stroke-width: 3px;
-      -webkit-text-stroke-color: #E4E4E4;
-    }
-    .text-stroke-4 {
-      -webkit-text-stroke-width: 4px;
-      -webkit-text-stroke-color: #E4E4E4;
     }
 }
 
@@ -85,7 +84,7 @@ html{
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
   }
-  
+
   @keyframes sheen {
     0% { transform: rotate(12deg) translateX(-150%); }
     100% { transform: rotate(12deg) translateX(150%); }

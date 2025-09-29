@@ -209,8 +209,8 @@ export default function Home() {
       <main>
         <section id="onas" className="py-20 bg-black text-white mt-20 z-10">
           <h2
-            className="text-stroke-3 text-5xl font-bold font-orbitron text-center mb-12 
-            sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-stroke-8 lg:text-8xl"
+            className="text-stroke-2 text-5xl font-bold font-orbitron text-center mb-12 
+            sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl"
           >
             <span className="text-black brightness-85">O </span>
             <span className="text-[#D90000] brightness-85">KAPELE</span>
@@ -276,7 +276,7 @@ export default function Home() {
 
         <section id="Akce" className="py-20 text-center bg-black z-100">
           <h2
-            className="brightness-85 text-6xl text-stroke-3 font-bold font-orbitron text-center mb-12 sm:text-7xl md:text-7xl md:text-stroke-4 lg:text-8xl lg:text-stroke-3"
+            className="brightness-85 text-6xl text-stroke-2 font-bold font-orbitron text-center mb-12 sm:text-7xl md:text-7xl md:text-stroke-4 lg:text-8xl"
           >
             <span className="text-black">A</span>
             <span className="text-[#D90000]">KCE</span>
@@ -327,7 +327,7 @@ export default function Home() {
         {/* galerie */}
         <section id="Fotogalerie" className="py-20t text-white">
           <h2
-            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl"
           >
             <span className="text-black">FO</span>
             <span className="text-[#D90000]">TOGRAFIE</span>
@@ -376,7 +376,7 @@ export default function Home() {
         {/* Videa sectoin*/}
         <section id="Videa" className="relative py-20 text-white flex flex-col items-center">
           <h2
-            className="text-5xl mx-10 text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
+            className="text-5xl mx-10 text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl"
           >
             <span className="text-black">PO</span>
             <span className="text-[#D90000]">SLECHNI SI NÁS</span>
@@ -403,7 +403,7 @@ export default function Home() {
         
         <section id="repertoar" className=" relative py-20 text-white flex flex-col items-center">
           <h2
-            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-4"
+            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl"
           >
             <span className="text-black">RE</span>
             <span className="text-[#D90000]">PERTOÁR</span>
@@ -436,7 +436,7 @@ export default function Home() {
         {/* Kontakty Section */}
         <section id="Kontakty" className=" relative py-20 text-stone-300">
           <h2
-            className="text-5xl text-stroke-3 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-3 lg:text-8xl lg:text-stroke-3"
+            className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl "
           >
             <span className="text-black">K</span>
             <span className="text-[#D90000]">ONTAKTY</span>
