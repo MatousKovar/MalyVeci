@@ -245,7 +245,7 @@ export default function Home() {
               {/* <li><strong>Vlastní vybavení</strong></li> */}
               <li><strong>Jsme mladá krev</strong> - naše vystoupení je stejně tak o hudbě, jako o energii a atmosféře, když hrajeme, tak prostě nevydržíme stát na místě.</li>
               <li><strong>Levnější než konkurence</strong> - hudba pro nás nikdy nebyla o penězích, proto vyjdeme vstříc i pořadatelům menších akcí. </li>
-              <li><strong>Ctíme originál</strong> - Oproti většině zábavových kapel, se snažíme přiblížit se co nejvíce originálním nahrávkám. U nás to není jen o tom zahrát pár akordů a zazpívat stejné slova. </li>
+              <li><strong>Ctíme originál</strong> - Oproti většině zábavových kapel, se snažíme přiblížit se co nejvíce originálním nahrávkám. U nás to není jen o tom zahrát pár akordů a zazpívat stejná slova. </li>
               
             </ul>
             </div>
