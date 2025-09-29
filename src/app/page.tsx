@@ -21,7 +21,6 @@ const images = [
   "/houba.jpeg",
   "/14.jpeg",
   "/novosedly.jpeg",
-  "/10.PNG",
   "/4.PNG",
   "/5.PNG",
   "/7.PNG",

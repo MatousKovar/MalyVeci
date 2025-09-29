@@ -6,10 +6,27 @@ import Navbar from '../../components/Navbar';
 
 
 export const metadata: Metadata = {
-  title: "Kapela Malý Věci",
+  title:"MALÝ VĚCI – kapela ze Strakonic | Oficiální stránky",
   description: "Mladá zábavová kapela z okolí Strakonic a Horažďovic",
+  keywords: ["kapela", "zábavová kapela", "svatby", "plesy","Večírky", "Strakonice", "Horažďovice", "Písek", "rock", "pop", "hudba","Malý Věci"],
   icons: {
-    icon: "/favicon.svg", 
+    icon: "/favicon.ico", 
+  },
+  openGraph: {
+    title: "MALÝ VĚCI – kapela ze Strakonic",
+    description: "Mladá zábavová kapela z okolí Strakonic a Horažďovic.",
+    url: "https://www.malyveci.cz",
+    siteName: "Malý Věci",
+    images: [
+      {
+        url: "/uvodka.jpg", // put your logo/hero image in /public
+        width: 1200,
+        height: 630,
+        alt: "Malý Věci – kapela Strakonice",
+      },
+    ],
+    locale: "cs_CZ",
+    type: "website",
   },
 };
 
