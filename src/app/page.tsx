@@ -16,6 +16,7 @@ const images = [
   "/12.PNG",
   "/1.PNG",
   "/jinin.jpeg",
+  "/galeriexx.jpg",
   "/9.PNG",
   "/15.jpeg",
   "/houba.jpeg",
