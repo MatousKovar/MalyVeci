@@ -32,7 +32,7 @@ export default function Navbar() {
                       ? "repertoar"
                       : link
                   }`}
-                  className="text-lg font-medium tracking-wide px-3 py-2 rounded-md transition-colors duration-300 hover:text-[#D90000]"
+                  className="text-lg font-medium font-orbitron tracking-wide px-3 py-2 rounded-md transition-colors duration-300 text-stone-300 hover:text-[#D90000]"
                 >
                   {link}
                 </a>

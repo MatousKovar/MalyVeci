@@ -24,7 +24,9 @@ const images = [
   "/novosedly.jpeg",
   "/4.PNG",
   "/5.PNG",
+  "/hlavacci.jpeg",
   "/7.PNG",
+  "/roubalka_deti.jpg",
   "/8.PNG",
   "/11.PNG",
 ];
@@ -287,18 +289,6 @@ export default function Home() {
             <span className="text-[#D90000]">KCE</span>
           </h2>
           <div className="max-w-4xl mx-auto mx-10 grid md:grid-cols-2 gap-8 px-4">
-            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
-              <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Rockový večer u Hlaváčků
-              </h3>
-              <p className="text-gray-300 mb-2">Datum: 3.10.2025</p>
-              <p className="text-gray-400">Restaurace U Hlaváčků Horažďovice</p>
-              <button
-              onClick={() => setPoster("/hlavacci.jpeg")}
-              className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
-              Zobrazit plakát
-            </button>
-          </div>
 
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-[#D90000]">
@@ -320,11 +310,11 @@ export default function Home() {
               </h3>
               <p className="text-gray-300 mb-2">Datum: 6.12.2025</p>
               <p className="text-gray-400">Jinín, Sál nad hostincem</p>
-              {/* <button
-              onClick={() => setPoster("/h.jpg")}
+              <button
+              onClick={() => setPoster("/plakat_jinin.png")}
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
               Zobrazit plakát
-              </button> */}
+              </button>
             </div>
           </div>
         </section>
@@ -413,7 +403,9 @@ export default function Home() {
             <span className="text-black">RE</span>
             <span className="text-[#D90000]">PERTOÁR</span>
           </h2>
-          <p className="text-stone-300 text-xl text-center md:text-2xl mx-10">Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím 
+          <p className="text-stone-300 text-lg mx-10 md:mx-40 text-center">
+              Hrajeme pro radost – a pro všechny. Náš repertoár čítá přes 90 skladeb napříč žánry – od legendárních klasik až po současné hity. Hrajeme pomalu i rychle, česky i anglicky, vážně i s recesí, popově i rockově. Zkrátka – s námi se nudit rozhodně nebudete!  
+              Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím kontaktujte.
           <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]"href="#Kontakty"> kontaktujte.</a>
           </p>
             <div className="w-full max-w-6xl overflow-x-hidden mt-15">
@@ -425,13 +417,15 @@ export default function Home() {
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/6WfhZNzOioBmDUq4xb5kvz?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3r6AJfqJ44FepL26lwLMPf?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2IJftBfq7pJ43tfnOR0RB3?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/15tHagkk8z306XkyOHqiip?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/5vfjUAhefN7IjHbTvVCT4Z?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/273GBYX8ZWhlILVTWvQrS5?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3k2mJZM0fdqDmW7GUbq2zs?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/29uKzagduhFDTWPCjqaGOg?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4yKFAIgwISeVWcNnatlxx3?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/0jWgAnTrNZmOGmqgvHhZEm?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/2SiXAy7TuUkycRVbbWDEpo?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/0rmGAIH9LNJewFw7nKzZnc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/4TIJ7zSBNejpoIPaWpWRKc?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/3SFXsFpeGmBTtQvKiwYMDA?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <iframe className="rounded-lg shadow-lg" src="https://open.spotify.com/embed/track/36ypxavzIpdQffwmUboUCP?utm_source=generator" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -446,8 +440,8 @@ export default function Home() {
           <h2
             className="text-5xl text-stroke-2 brightness-85 font-bold font-orbitron text-center mb-12 sm:text-6xl md:text-7xl md:text-stroke-4 lg:text-8xl "
           >
-            <span className="text-black">K</span>
-            <span className="text-[#D90000]">ONTAKTY</span>
+            <span className="text-black">KO</span>
+            <span className="text-[#D90000]">NTAKTY</span>
           </h2>
           <div className="max-w-5xl mx-auto text-center px-4">
           <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
