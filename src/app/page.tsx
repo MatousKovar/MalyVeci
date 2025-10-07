@@ -405,7 +405,7 @@ export default function Home() {
           </h2>
           <p className="text-stone-300 text-lg mx-10 md:mx-40 text-center">
               Hrajeme pro radost – a pro všechny. Náš repertoár čítá přes 90 skladeb napříč žánry – od legendárních klasik až po současné hity. Hrajeme pomalu i rychle, česky i anglicky, vážně i s recesí, popově i rockově. Zkrátka – s námi se nudit rozhodně nebudete!  
-              Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím kontaktujte.
+              Pro zaslání kompletního repertoáru nebo přidání písní na přání nás prosím
           <a className="font-bold text-stone-400 transition-colors duration-300 ease-in-out hover:text-[#D90000]"href="#Kontakty"> kontaktujte.</a>
           </p>
             <div className="w-full max-w-6xl overflow-x-hidden mt-15">
