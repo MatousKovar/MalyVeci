@@ -311,7 +311,7 @@ export default function Home() {
               <p className="text-gray-300 mb-2">Datum: 6.12.2025</p>
               <p className="text-gray-400">Jinín, Sál nad hostincem</p>
               <button
-              onClick={() => setPoster("/plakat_jinin.png")}
+              onClick={() => setPoster("/jinin2.png")}
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
               Zobrazit plakát
               </button>
