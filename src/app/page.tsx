@@ -320,7 +320,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Svatba
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 26.6.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 20.6.2025</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
           </div>
