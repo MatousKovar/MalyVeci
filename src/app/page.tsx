@@ -393,8 +393,8 @@ export default function Home() {
           <div className="w-full max-w-3xl aspect-video">
             <iframe
               className="w-full h-full rounded-xl"
-              src="https://www.youtube.com/embed/t0U3Jbou_bI?si=9RBactRjuKwWm5T6"
-              title="YouTube video player"
+              src="https://www.youtube.com/embed/YCcMVXeO7a4?si=nwcPU8qz7tMOfBN6"
+              title="Koncert Spinavy zada kapela"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
