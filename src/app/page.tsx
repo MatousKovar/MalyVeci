@@ -19,6 +19,7 @@ const images = [
   "/galeriexx.jpg",
   "/9.PNG",
   "/15.jpeg",
+  "/jinin2.png",
   "/houba.jpeg",
   "/14.jpeg",
   "/novosedly.jpeg",
@@ -292,12 +293,12 @@ export default function Home() {
 
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Soukromá akce
+                Anděl Music Bar
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 28.11.2025</p>
-              <p className="text-gray-400">Strakonice</p>
+              <p className="text-gray-300 mb-2">Datum: 3.4.2026</p>
+              <p className="text-gray-400">Plzeň</p>
             </div>
-            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
+            {/* <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Taneční zábava
               </h3>
@@ -308,19 +309,19 @@ export default function Home() {
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
               Zobrazit plakát
               </button>
-            </div>
+            </div> */}
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Soukromá akce
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 6.2.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 6.2.2026</p>
               <p className="text-gray-400">Horažďovice</p>
             </div>
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Svatba
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 20.6.2025</p>
+              <p className="text-gray-300 mb-2">Datum: 20.6.2026</p>
               <p className="text-gray-400">Strakonice</p>
             </div>
           </div>
