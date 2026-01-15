@@ -327,9 +327,17 @@ export default function Home() {
 
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
+                Diskotéka
+              </h3>
+              <p className="text-gray-300 mb-2">Datum: 27.6.2026</p>
+              <p className="text-gray-400">České Velenice</p>
+            </div>
+
+            <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
+              <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Svatba
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 4.7.2026</p>
+              <p className="text-gray-300 mb-2">Datum: 8.8.2026</p>
               <p className="text-gray-400">Sušice</p>
             </div>
           </div>
