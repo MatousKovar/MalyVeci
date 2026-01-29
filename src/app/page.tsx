@@ -60,7 +60,7 @@ const members = [
   {
     name: "Petr Roubal",
     role: "Bicí",
-    bio: "Metronom, který drží pevné  tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
+    bio: "Metronom, který drží pevné tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
     image: prokop,
   },
 ];
@@ -295,7 +295,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2 text-red-600">
                 Anděl Music Bar
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 3.4.2026</p>
+              <p className="text-gray-300 mb-2">Datum: 30.5.2026</p>
               <p className="text-gray-400">Plzeň</p>
             </div>
             {/* <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
