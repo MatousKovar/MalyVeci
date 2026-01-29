@@ -60,7 +60,7 @@ const members = [
   {
     name: "Petr Roubal",
     role: "Bicí",
-    bio: "Metronom, který drží pevné tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
+    bio: "Metronom, který drží pevné  tempo a udává energii celé kapele. Kromě bubnů má na starosti i tvorbu setlistů a s Denisou tvoří vokální duo, které dodává koncertům další rozměr.",
     image: prokop,
   },
 ];
