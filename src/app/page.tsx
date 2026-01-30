@@ -312,10 +312,10 @@ export default function Home() {
             </div> */}
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
-                Soukromá akce
+                Festival Vítání léta
               </h3>
-              <p className="text-gray-300 mb-2">Datum: 6.2.2026</p>
-              <p className="text-gray-400">Horažďovice</p>
+              <p className="text-gray-300 mb-2">Datum: 6.6.2026</p>
+              <p className="text-gray-400">Malenice</p>
             </div>
             <div className="bg-stone-800/70 p-6 rounded-xl shadow-lg z-10">
               <h3 className="text-xl font-semibold mb-2 text-red-600">
